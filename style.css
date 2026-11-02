@@ -1,0 +1,58 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: "Segoe UI", Tahoma, sans-serif;
+  background: linear-gradient(135deg, #1f2a44, #3b2f63);
+  min-height: 100vh;
+  padding: 30px 15px;
+  color: #222;
+}
+.wrapper { max-width: 760px; margin: auto; }
+header { text-align: center; color: #fff; margin-bottom: 20px; }
+header h1 { font-size: 2.2rem; letter-spacing: 1px; }
+header p { opacity: .85; margin-top: 6px; }
+
+form, #result {
+  background: #fff;
+  border-radius: 12px;
+  padding: 26px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.25);
+}
+.row { display: flex; gap: 18px; flex-wrap: wrap; }
+.field { flex: 1 1 260px; margin-bottom: 16px; }
+label { display: block; font-weight: 600; margin-bottom: 6px; font-size: .92rem; }
+input[type=text], input[type=email], input[type=date], select, textarea {
+  width: 100%; padding: 10px 12px; border: 1.5px solid #ccd; border-radius: 8px;
+  font-size: .95rem; transition: border-color .2s;
+}
+input:focus, select:focus, textarea:focus { outline: none; border-color: #6c4fe0; }
+.inline { display: flex; gap: 16px; flex-wrap: wrap; }
+.inline label { font-weight: 400; display: flex; align-items: center; gap: 5px; margin: 0; }
+.error { color: #d93025; font-size: .8rem; display: block; min-height: 1em; margin-top: 3px; }
+.invalid { border-color: #d93025 !important; }
+small { color: #777; }
+
+button {
+  background: #6c4fe0; color: #fff; border: 0; padding: 12px 28px;
+  border-radius: 8px; font-size: 1rem; cursor: pointer; transition: background .2s;
+}
+button:hover { background: #5538c4; }
+button:disabled { background: #999; cursor: wait; }
+
+.hidden { display: none; }
+#result { margin-top: 22px; }
+
+/* Output card (returned by PHP) */
+.success-title { color: #1e8e3e; margin-bottom: 14px; }
+.details { width: 100%; border-collapse: collapse; margin-bottom: 16px; }
+.details th, .details td { text-align: left; padding: 10px 12px; border-bottom: 1px solid #eee; }
+.details th { width: 35%; background: #f6f4ff; color: #3b2f63; }
+.tag { display: inline-block; background: #6c4fe0; color: #fff; padding: 2px 10px; border-radius: 12px; font-size: .8rem; margin-right: 4px; }
+.alert { background: #fdecea; color: #b3261e; padding: 12px; border-radius: 8px; }
+.alert ul { margin-left: 18px; }
+.actions button { margin-right: 8px; }
+
+@media print {
+  body { background: #fff; }
+  header, form, .actions { display: none !important; }
+  #result { box-shadow: none; }
+}
